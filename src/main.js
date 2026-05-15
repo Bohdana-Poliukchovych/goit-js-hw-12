@@ -58,15 +58,14 @@ async function onFormSubmit(event) {
         
         totalPages = Math.ceil(data.totalHits / 15);
 
-        if (page < totalPages) {
-            showLoadMoreButton();
-        } else {
+        if (data.totalHits > 0 && data.totalHits <= 15) {
             hideLoadMoreButton();
-
             iziToast.info({
                 message: "We're sorry, but you've reached the end of search results.",
                 position: 'topRight',
             });
+        } else if (page < totalPages){
+            showLoadMoreButton();
         
         }
         iziToast.success({
