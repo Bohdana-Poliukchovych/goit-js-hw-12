@@ -21,6 +21,7 @@ const loadMoreBtn = document.querySelector('.load-more');
 let searchQuery = '';
 let page = 1;
 let totalPages = 0;
+const perPage = 15;
 form.addEventListener('submit', onFormSubmit);
 loadMoreBtn.addEventListener('click', onLoadMore);
 
